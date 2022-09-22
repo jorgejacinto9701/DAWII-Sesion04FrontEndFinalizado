@@ -11,9 +11,11 @@ const baseUrlModalidad = AppSettings.API_ENDPOINT+ '/modalidad';
 })
 export class ModalidadService {
 
-
-    constructor() { }
-
+    constructor(private http: HttpClient) { }
     
-  }
+    registraModalidad(obj:Modalidad): Observable<any> {
+        return this.http.post(baseUrlModalidad, obj);
+    }
+
+}
 
